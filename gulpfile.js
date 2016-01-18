@@ -12,10 +12,13 @@ gulp.task('uglify', function () {
 
     var uglify = require('gulp-uglify');
     var jsResult = gulp.src(CONFIG.PATHS.src.js)
+        .pipe(concat('script.js'))
+        .pipe(gulp.dest(CONFIG.PATHS.dist.js))
         .pipe(uglify())
-        .pipe(concat('script.js'));
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest(CONFIG.PATHS.dist.js));
 
-    return jsResult.pipe(gulp.dest(CONFIG.PATHS.dist.js));
+    return jsResult;
 });
 
 gulp.task('lesstocss', function () {
@@ -23,9 +26,8 @@ gulp.task('lesstocss', function () {
     var less = require('gulp-less');
 
     var lessCssResult = gulp.src(CONFIG.PATHS.src.less)
-        .pipe(concat('style.less'))
-        .pipe(gulp.dest(CONFIG.PATHS.dist.less))
         .pipe(less())
+        .pipe(concat('style.css'))
         .pipe(gulp.dest(CONFIG.PATHS.dist.css))
         .pipe(less({
             compress: true
