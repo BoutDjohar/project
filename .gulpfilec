@@ -1,0 +1,68 @@
+"use strict";
+
+var argv = require('yargs').argv;
+
+// --------------
+// Configuration.
+var PORT = argv['port'] || 5555;
+var LIVE_RELOAD_PORT = argv['reload-port'] || 4002;
+var APP_BASE = argv['base'] || '/';
+var APP_HOST = argv['host'] || 'http://localhost';
+
+var APP_SRC = 'src';
+var APP_DIST = 'dist';
+
+var PATHS = {
+    dist: {
+        root: APP_DIST,
+        js: APP_DIST + '/js',
+        css: APP_DIST + '/css',
+        less: APP_DIST + '/less',
+        sass: APP_DIST + '/sass',
+        img: APP_DIST + '/img',
+        html: APP_DIST + '/html',
+        lib: APP_DIST + '/js/lib',
+    },
+    src: {
+        root: APP_SRC,
+        ts: [
+            APP_SRC + '/ts/**/*.ts',
+        ],
+        js: [
+            APP_SRC + '/**/*.js'
+        ],
+        less: [
+            APP_SRC + '/**/*.less'
+        ],
+        sass: [
+            APP_SRC + '/**/*.sass'
+        ],
+        img: [
+            APP_SRC + '/**/*.png',
+            APP_SRC + '/**/*.jpeg',
+            APP_SRC + '/**/*.jpg',
+            APP_SRC + '/**/*.gif'
+        ],
+        html: [
+            APP_SRC + '/**/*.html',
+        ]
+    },
+    clean:[
+        APP_DIST
+    ],
+    lib: [
+        'node_modules/jquery/dist/jquery.min.js'
+    ],
+    typings: []
+};
+
+var CONFIG = {
+    PORT: PORT,
+    LIVE_RELOAD_PORT: LIVE_RELOAD_PORT,
+    APP_BASE: APP_BASE,
+    APP_HOST: APP_HOST,
+    APP_SRC: APP_SRC,
+    APP_DIST: APP_DIST,
+    PATHS: PATHS
+};
+module.exports = CONFIG;

@@ -1,0 +1,30 @@
+{
+  "name": "base-front-build",
+  "version": "1.0.0",
+  "description": "The base project fornt builder (jQuery / LESS)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anisabid/base-front-build.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anisabid/base-front-build.git/issues"
+  },
+  "homepage": "https://github.com/anisabid/base-front-build.git#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "connect": "^3.4.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.8.0",
+    "gulp-uglify": "^1.5.1",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "yargs": "^3.30.0"
+  },
+  "dependencies": {
+    "jquery": "1.12.0"
+  }
+}
