@@ -1,1 +1,0 @@
-https://github.com/kara/angular2-ot-site
