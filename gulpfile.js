@@ -22,10 +22,9 @@ gulp.task('uglify', function () {
 });
 
 gulp.task('lesstocss', function () {
-
     var less = require('gulp-less');
 
-    var lessCssResult = gulp.src(CONFIG.PATHS.src.less)
+    var lessCssResult = gulp.src(CONFIG.PATHS.src.less.index)
         .pipe(less())
         .pipe(concat('style.css'))
         .pipe(gulp.dest(CONFIG.PATHS.dist.css))
@@ -59,12 +58,12 @@ gulp.task('start', ['libs', 'html', 'uglify', 'lesstocss'], function () {
 
     gulp.watch(CONFIG.PATHS.src.html, ['html']);
     gulp.watch(CONFIG.PATHS.src.js, ['uglify']);
-    gulp.watch(CONFIG.PATHS.src.less, ['lesstocss']);
+    gulp.watch(CONFIG.PATHS.src.less.files, ['lesstocss']);
 
     /*app = connect().use(serveStatic(__dirname + CONFIG.APP_BASE + CONFIG.APP_DIST));  // serve everything that is static
-    http.createServer(app).listen(CONFIG.PORT, function () {
-        open(CONFIG.APP_HOST + ':' + CONFIG.PORT);
-    });*/
+     http.createServer(app).listen(CONFIG.PORT, function () {
+     open(CONFIG.APP_HOST + ':' + CONFIG.PORT);
+     });*/
 
     browserSync({
         port: CONFIG.PORT,

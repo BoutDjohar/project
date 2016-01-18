@@ -31,9 +31,12 @@ var PATHS = {
         js: [
             APP_SRC + '/**/*.js'
         ],
-        less: [
-            APP_SRC + '/**/less/style.less'
-        ],
+        less: {
+            files: [
+                APP_SRC + '/**/*.less'
+            ],
+            index: APP_SRC + '/**/less/style.less'
+        },
         sass: [
             APP_SRC + '/**/*.sass'
         ],
