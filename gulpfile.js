@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    path = require('path'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     CONFIG = require('./.gulpfilec');
@@ -42,7 +43,15 @@ gulp.task('html', function () {
 });
 
 gulp.task('libs', function () {
-    return gulp.src(CONFIG.PATHS.lib).pipe(gulp.dest(CONFIG.PATHS.dist.lib));
+    CONFIG.PATHS.lib.forEach(function (lib, index, array) {
+        gulp.src(lib.src)
+            .pipe(
+                gulp.dest(
+                    path.join(CONFIG.PATHS.dist.lib, lib.dist)
+                )
+            )
+    });
+    return true; //gulp.src(CONFIG.PATHS.lib).pipe(gulp.dest(CONFIG.PATHS.dist.lib));
 });
 
 gulp.task('build', ['libs', 'html', 'uglify', 'lesstocss']);

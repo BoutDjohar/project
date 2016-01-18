@@ -33,10 +33,14 @@
 // Example
 // .rem-calc(margin-left, 20);
 .rem-calc(@attr, @val) {
-  @{attr} : @val / @base-font-size * 1rem;
+    @{attr} : @val / @base-font-size * 1rem;
 }
 
-.absolute (@top: initial, @right: initial, @bottom: initial, @left: initial ){
+.em-calc( @attr, @value: @base-font-size, @context: @base-font-size ) {
+    @{attr} : (@value / @context) + 0em;
+}
+
+.absolute (@top: initial, @right: initial, @bottom: initial, @left: initial ) {
   position: absolute;
   .rem-calc(top, @top);
   .rem-calc(right, @right);

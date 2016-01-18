@@ -21,7 +21,7 @@ var PATHS = {
         sass: APP_DIST + '/sass',
         img: APP_DIST + '/img',
         html: APP_DIST + '/html',
-        lib: APP_DIST + '/js/lib',
+        lib: APP_DIST + '/lib',
     },
     src: {
         root: APP_SRC,
@@ -54,7 +54,18 @@ var PATHS = {
         APP_DIST
     ],
     lib: [
-        'node_modules/jquery/dist/jquery.min.js'
+        {
+            src: 'node_modules/jquery/dist/jquery.min.js',
+            dist: 'jquery'
+        },
+        {
+            src: 'node_modules/font-awesome/css/**',
+            dist: 'font-awesome/css/'
+        },
+        {
+            src: 'node_modules/font-awesome/fonts/**',
+            dist: 'font-awesome/fonts/'
+        }
     ],
     typings: []
 };
