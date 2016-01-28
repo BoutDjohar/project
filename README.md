@@ -24,3 +24,7 @@ After completing installation type in your favourite shell:
 * browser-sync
     
 * jquery
+
+* font-awesome
+
+* bootstrap
