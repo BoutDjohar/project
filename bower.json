@@ -1,0 +1,19 @@
+{
+  "name": "wordappeal",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.12.*",
+    "html5shiv": "^3.7.3"
+  }
+}

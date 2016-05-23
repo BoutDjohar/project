@@ -1,0 +1,82 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// New mixin to use as of v3.0.1
+@mixin text-hide() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+@mixin  container() {
+    width: $container-width;
+    @include center-block;
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow : $params;
+     -moz-box-shadow : $params;
+          box-shadow : $params;
+}
+
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.affix {
+  position: fixed;
+}
+
+.container {
+  @include container;
+}
+
+

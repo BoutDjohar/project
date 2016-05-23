@@ -1,4 +1,8 @@
-'use strict';
-$(document).ready(function () {
-    console.log('document Ready');
-});
+(function($) {
+
+	$('a').click(function(){
+        var x = 'anis abid 2';
+    return false;
+  })
+
+})(jQuery);
